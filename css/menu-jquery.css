@@ -1,0 +1,249 @@
+@charset "UTF-8";
+/* CSS Document 
+位置関係よりコンテンツの作成を優先する
+<?php language_attributes(); ?>
+*/
+
+
+/* サイドオープン時にメインコンテンツを覆う部分 */
+.overlay {
+  content: '';
+  visibility: hidden;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: 3;
+}
+.overlay::after {
+  visibility: hidden;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 50px;
+  color: rgba(255,255,255,0);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.side-open .overlay {
+  visibility: visible;
+  cursor: pointer;
+  background: rgba(0,0,0,.5);
+	position: absolute;
+}
+.side-open .overlay::after {
+  visibility: visible;
+  color: rgba(255,255,255,.8);
+}
+
+/* サイドメニュー ※リストのスタイルは省略 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  padding-top: 150px;
+  text-align: left;
+  font-size: 13px;
+  
+}
+
+.js__side-menu {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  width: 300px;
+  height: 700px;
+  text-align: left;
+  font-size: 13px;
+  background: rgba(255,255,255,0.8);
+  z-index: 40;
+}
+
+/* メインコンテンツ*/
+.wrapper, .side-open {
+  /*position: relative;footer位置の調整*/
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: 2;
+	/*padding-bottom: 292px;footer位置の調整*/
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px){
+.wrapper {
+	padding-bottom: 455px;
+	
+}
+}
+.side-menu {
+-webkit-transform: translate3d(600px, 0, 0);
+  transform: translate3d(600px, 0, 0);
+}
+
+.side-open {
+	z-index: 40;
+    width: 100%;
+    height: 100%;
+}
+
+.panel-btn{
+  display: inline-block;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin: 4px 5px 0 0;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.panel-btn-icon{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 4px;
+  margin: -2px 0 0 -12px;
+  background: #E87C00;
+  transition: .2s;
+}
+.panel-btn-icon:before, .panel-btn-icon:after{
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 24px;
+  height: 4px;
+  background: #E87C00;
+  transition: .3s;
+}
+.panel-btn-icon:before{
+  margin-top: -11px;
+}
+.panel-btn-icon:after{
+  margin-top: 7px; 
+}
+.panel-btn .close{
+	background: transparent;
+	margin: -4px 0 0 -12px;
+}
+
+.panel-btn .close:before, .panel-btn .close:after{
+  margin-top: 0;
+}
+.panel-btn .close:before{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.panel-btn .close:after{
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.nav-text {
+	color: #E87C00;
+	display: block;
+	font-size: 20px;
+	padding: 10px 0 10px 40px;
+}
+
+.header-nav {
+	margin: 0;
+	padding: 0;
+}
+
+
+.nav-text:hover {
+	background-color: #FAB260;
+}
+.nav-logo-search {
+    width: 23px;
+    height: 23px;
+    position: relative;
+    top: 3px;
+    padding-right: 15px;
+}
+
+.nav-text-search {
+	font-size: 20px;
+	display: inline-block;
+	color: #ffffff;
+	background-color: #FAB260;
+	border-radius: 20px;
+	padding: 5px 150px 5px 10px;
+	margin: 15px 0 10px 40px;
+}
+
+/*ヘッダーのレスポンシブ表示切替*/
+@media (min-width: 768px) { 
+	
+	.sitetitle {
+		margin-left: 10px;
+		flex: 1;/*タイトルの左固定*/
+		font-size: 30px;
+		position: absolute;
+    	left: 85px;
+   		top: 18px;
+		
+	}
+	.panel-btn {
+		display: none;/*ボタンの非表示*/
+	}
+	.header-nav {
+		display: flex;
+		position: relative;
+    	top: 24px;
+	}
+	.side-menu {
+		transform: none;/*サイドからのスライドを削除し、デフォルトでトップにナビを表示*/
+		position: relative;
+    	padding: 0;
+   		width: auto;
+		
+	}
+	.nav-text {
+		font-size: 14px;
+		color: #ffffff;
+		padding: 10px;
+	}
+	.nav-text-search {
+		display: none;
+	}
+	.hero-image {
+		max-width: 615px;
+		left: 0;
+		right: 0;
+		margin: auto;
+    	top: -1.5em;
+	}
+	.hero-text {
+		font-size: 70px;
+    	line-height: 78px;
+    	top: 313px;
+		left: 40px;
+	}
+	.hero-subtext {
+		left: 40px;
+    	font-size: 26px;
+	}
+	.button-nav {
+		display: none;
+	}
+
+}

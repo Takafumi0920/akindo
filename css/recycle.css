@@ -1,0 +1,8 @@
+.circle-button:hover {
+	background-color: rgba(219,125,17,1.00);	
+}
+
+.contents-button:hover {
+	opacity: 0.5;
+}
+
