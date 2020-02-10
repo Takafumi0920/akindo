@@ -6,3 +6,9 @@
 	opacity: 0.5;
 }
 
+/*user agent打ち消し*/
+.nothing {
+	margin: 0;
+	padding: 0;
+	
+}

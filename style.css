@@ -317,9 +317,25 @@ vlog
 	width: 13px;
 }
 
+
+.post-wrapper {
+	margin: 10px 20px;
+}
+
+.card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 3;/*リンクをカード全体に被せる*/
+}
+
 .post-latest {
 	margin: 0 20px 0 20px;
 	border-radius: 7px;/*ホバー時の下線の丸みを確保*/
+	position: relative;
+	z-index: 1;/*リンクをカード全体にするための重ね順基準*/
 }
 
 .post-latest:hover {
@@ -336,6 +352,7 @@ vlog
 	border-radius: 7px;
 	min-height: 300px;
 	position: relative;	
+	z-index: 2;
 }
 
 .post-latest-textwrap {
@@ -343,6 +360,7 @@ vlog
     position: absolute;
     top: 180px;
     width: 100%;
+	z-index: 2;
 }
 
 
@@ -352,6 +370,8 @@ vlog
 	display: flex;
 	height: 24vw;
 	margin: 28px 20px 20px 20px;
+	position: relative;/*無いとカード全体にリンクが広がらない*/
+	z-index: 1;
 }
 
 
@@ -367,6 +387,7 @@ vlog
 	width: 100%;
 	text-overflow: ellipsis;
 	word-break: break-all;
+	z-index: 2;
 }
 .post-latest-title {
 	font-size: 4vw;
@@ -386,6 +407,7 @@ vlog
 	
 	flex: 3;
 	margin: 2vw 0 2vw 2vw;
+	z-index: 2;
 }
 
 
@@ -416,6 +438,7 @@ vlog
 	}
 	.post {
 		height: 155px;
+		margin: 10px 3vw 10px 3vw;
 	}
 	.post-photo {
 		margin: 10px 0 10px 5px;

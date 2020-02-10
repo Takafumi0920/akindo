@@ -4,9 +4,9 @@
 
 	<?php the_post(); ?>
 
-	<div class="page-title">
-		<h1><?php the_title(); ?></h1>
-	</div>
+	
+		<h1 class="site-title"><?php the_title(); ?></h1>
+	
 
 	<div class="content-area content-area-profile">
 		<div class="main-column">
