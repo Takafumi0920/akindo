@@ -3,7 +3,7 @@ if ( post_password_required() ) { //パスワードを必要とする投稿で�
 	return; //関数の実行停止？
 }
 ?>
-
+<a>sadsf</a>
 <?php if ( have_comments() ) :　//コメントがあるかどうか判定 ?>
 	<div class="box-generic">
 		<div class="box-content box-comment-display">
