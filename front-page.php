@@ -3,7 +3,7 @@
 	<section>
 		<img class="hero-image"　alt="" src="<?php echo get_template_directory_uri(); ?>/img/melon-cutout.png">
 		<div class="hero-textwrap">
-			<h1 class="hero-text">夕張を、<br>ほおばろう。</h1>
+			<h1 class="hero-text">夕張を<br>ほおばろう。</h1>
 			<p class="hero-subtext">ベテラン店長が市場で直接仕入れる八百屋</p>
 		</div>
 	</section>
